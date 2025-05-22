@@ -1,17 +1,20 @@
 //05.13 ~ 05.16
 using UnityEngine;
 using System;
-public class Test : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public float moveSpeed = 10f;
 
-
-    void Start()
-    {
-
-    }
     void Update()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        Vector3 dir = new Vector3(h, 0, v);
+        Debug.Log($"현재 입력 : {dir}");
+        
+        transform.position += dir * moveSpeed * Time.deltaTime;
+        /*
         if (Input.GetKey(KeyCode.W))// 앞으로 가는 기능
         {
             transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
@@ -28,7 +31,7 @@ public class Test : MonoBehaviour
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
-        
+        */
     }
     
     
