@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        //transform.forward
 
 
         Destroy(this.gameObject, 5f);
